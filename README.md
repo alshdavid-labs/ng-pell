@@ -16,9 +16,11 @@ You can use the ngModel to set the inital state of the WYSIWYG, or update it ext
 
 ## Installation 
 
+The `richtextarea` folder contains an Angular component
+
 1. Add the richtextarea folder to your project
-2. The folder contains an Angular component
-3. Add the component to your `app.module.ts`
+2. Add the component to your `app.module.ts`
+3. Use it in your project with `<richtextarea [(ngModel)]="yourVar"></richtextarea>`
 
 ```
 import { RichtextareaComponent } from './richtextarea/richtextarea.component';

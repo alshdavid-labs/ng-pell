@@ -11,11 +11,12 @@ Add the component to your `app.module.ts`
 import { RichtextareaComponent } from './richtextarea/richtextarea.component';
 ```
 
-[[http://i.imgur.com/LXWCEIg.png]]
+![Imgur](http://i.imgur.com/LXWCEIg.png)
 
 # Usage
 
-[[http://i.imgur.com/rBZs3IW.png]]
+
+![Imgur](http://i.imgur.com/rBZs3IW.png)
 
 ```
 <richtextarea [(ngModel)]="yourVar"></richtextarea>

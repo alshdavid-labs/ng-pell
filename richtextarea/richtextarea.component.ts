@@ -22,25 +22,28 @@ export class RichtextareaComponent implements OnInit, AfterViewInit, OnChanges {
   @ViewChild('wysiwyg') wysiwyg: ElementRef
 
   ngAfterViewInit(){
-    this.wysiwygInit(this.wysiwyg.nativeElement)
+    this.wysiwygInit(this.wysiwyg.nativeElement, this.actions)
     this.editor.content.innerHTML = this.ngModel;
   }
 
   ngOnChanges(changes: any) {
       try {
-        this.editor.content.innerHTML = this.ngModel;
+        if (this.editor.content.innerHTML != this.ngModel) {
+          this.editor.content.innerHTML = this.ngModel
+        }        
       } catch (err) {
 
       }
   }
 
+  @Input() actions:Array<Object> = []
   @Input() ngModel:String = ""
   @Output() ngModelChange = new EventEmitter()
   pell = pell
   html  
   editor
 
-  wysiwygInit(elm) {
+  wysiwygInit(elm, actions) {
       this.editor = pell.init({
         element: elm, 
         onChange: html => {
@@ -56,12 +59,6 @@ export class RichtextareaComponent implements OnInit, AfterViewInit, OnChanges {
             result: () => this.pell.exec("italic")
           },
           {
-            name: "custom",
-            icon: "<b><u><i>C</i></u></b>",
-            title: "Custom Action",
-            result: () => console.log("YOLO")
-          },
-          {
             name: "image",
             result: () => {
               const url = window.prompt("Enter the image URL");
@@ -75,7 +72,7 @@ export class RichtextareaComponent implements OnInit, AfterViewInit, OnChanges {
               if (url) this.pell.exec("createLink", url);
             }
           }
-        ],
+        ].concat(actions),
         classes: {}
       });
   }

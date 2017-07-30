@@ -1,5 +1,5 @@
 # ng-pell
-Rich Text WYSIWYG Editor for Angular 4+
+Rich Text WYSIWYG Editor for Angular 4+ powered by the [pell WYSIWYG editor](https://github.com/jaredreich/pell)
 
 ![Imgur](http://i.imgur.com/77MWAjO.png)
 

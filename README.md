@@ -22,7 +22,7 @@ Add the component to your `app.module.ts`
 import { RichtextareaComponent } from './richtextarea/richtextarea.component';
 ```
 
-![Imgur](http://i.imgur.com/LXWCEIg.png)
+![Imgur](http://i.imgur.com/MDZJ1wl.png)
 
 
 

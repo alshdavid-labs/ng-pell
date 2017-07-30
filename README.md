@@ -1,6 +1,8 @@
 # ng-pell
 Rich Text WYSIWYG Editor for Angular 4+
 
+![Imgur](http://i.imgur.com/77MWAjO.png)
+
 ## Usage
 
 ![Imgur](http://i.imgur.com/7ebtm9l.png)

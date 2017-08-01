@@ -5,10 +5,8 @@ Rich Text WYSIWYG Editor for Angular 4+ powered by the [pell WYSIWYG editor](htt
 
 ## Usage
 
-![Imgur](http://i.imgur.com/7ebtm9l.png)
-
 ```
-<richtextarea [(ngModel)]="yourVar" [actions]="optional"></richtextarea>
+<richtextarea [(value)]="yourVar" [actions]="optional"></richtextarea>
 ```
 
 `ngModel` will send and recieve HTML (as a string) to a variable.
@@ -32,7 +30,7 @@ The `richtextarea` folder contains an Angular component
 
 1. Add the richtextarea folder to your project
 2. Add the component to your `app.module.ts`
-3. Use it in your project with `<richtextarea [(ngModel)]="yourVar"></richtextarea>`
+3. Use it in your project with `<richtextarea [(value)]="yourVar"></richtextarea>`
 
 ```
 import { RichtextareaComponent } from './richtextarea/richtextarea.component';

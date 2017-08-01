@@ -23,13 +23,13 @@ export class RichtextareaComponent implements OnInit, AfterViewInit, OnChanges {
 
   ngAfterViewInit(){
     this.wysiwygInit(this.wysiwyg.nativeElement, this.actions)
-    this.editor.content.innerHTML = this.ngModel;
+    this.editor.content.innerHTML = this.value;
   }
 
   ngOnChanges(changes: any) {
       try {
-        if (this.editor.content.innerHTML != this.ngModel) {
-          this.editor.content.innerHTML = this.ngModel
+        if (this.editor.content.innerHTML != this.value) {
+          this.editor.content.innerHTML = this.value
         }        
       } catch (err) {
 
@@ -37,8 +37,8 @@ export class RichtextareaComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   @Input() actions:Array<Object> = []
-  @Input() ngModel:String = ""
-  @Output() ngModelChange = new EventEmitter()
+  @Input() value:String = ""
+  @Output() valueChange = new EventEmitter()
   pell = pell
   html  
   editor
@@ -48,7 +48,7 @@ export class RichtextareaComponent implements OnInit, AfterViewInit, OnChanges {
         element: elm, 
         onChange: html => {
           this.html = html
-          this.ngModelChange.emit(this.html)
+          this.valueChange.emit(this.html)
         },
         styleWithCSS: true,
         actions: [
